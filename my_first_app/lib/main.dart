@@ -1,50 +1,4 @@
-// import 'dart:html';
-
 import 'package:flutter/material.dart';
-
-// void main() {
-//   runApp(MyApp);
-// }
-
-// class MyApp extends Statelesswidget {
-//   const MyApp({Key? key}) : super(key: key);
-
-//   @override
-//   Widget build (BuildContext context) {
-//     return const MaterialApp(
-//       home: Center(child: Text('hello world')),
-//     );
-//   }
-// }
-// void main() {
-//   runApp( MyApp());
-// }
-
-// class MyApp extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     String name = 'Raj';
-
-//     return MaterialApp(
-//       debugShowCheckedModeBanner: false,
-//       title: "my first app",
-//       theme: ThemeData(
-//           colorScheme: ColorScheme.fromSeed(
-//               seedColor: const Color.fromARGB(355, 124, 156, 244))),
-//               home: Scaffold(appBar: AppBar
-//               (backgroundColor: Colors.blue ,
-//               title: const Text(
-//                 'my first app',
-
-//                 style: TextStyle(color: Colors .white,),
-//               ),
-//               ),
-//               body: Center(child: Text(name),)
-//               ),
-
-//     );
-//   }
-// }
 
 void main() {
   runApp(const MyApp());
@@ -97,3 +51,44 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+
+
+// void main() {
+//   runApp(MyApp());
+// }
+
+// class MyApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     String name = 'Raj';
+
+//     return MaterialApp(
+//       debugShowCheckedModeBanner: false,
+//       title: "my first app",
+//       theme: ThemeData(
+//           colorScheme: ColorScheme.fromSeed(
+//               seedColor: const Color.fromARGB(355, 124, 156, 244))),
+//       home: Scaffold(
+//           appBar: AppBar(
+//             backgroundColor: Colors.blue,
+//             title: const Text(
+//               'my first app',
+//               style: TextStyle(
+//                 color: Colors.white,
+//               ),
+//             ),
+//           ),
+//           body: Center(
+//             child: Text(name),
+//           )),
+//     );
+//   }
+// }
+
+
+
+
+
+
+
