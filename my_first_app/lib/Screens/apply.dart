@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 // import 'package:my_first_app/main.dart';
 
-
 class Apply extends StatelessWidget {
   const Apply({super.key});
 
@@ -15,7 +14,10 @@ class Apply extends StatelessWidget {
             // width: 30,
             child: Column(
               children: [
-                Text('djfdsfl',textAlign: TextAlign.center,),
+                Text(
+                  'djfdsfl',
+                  textAlign: TextAlign.center,
+                ),
               ],
             ),
           ),

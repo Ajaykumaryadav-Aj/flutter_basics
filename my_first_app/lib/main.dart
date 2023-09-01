@@ -3,15 +3,10 @@
 // import 'dart:developer';
 // import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:my_first_app/screens/landing.dart';
-// import 'package:my_first_app/screens/log_in_screen.dart';
-// import 'package:my_first_app/Screens/Log_in_screen.dart';
-// import 'package:my_first_app/Screens/signup_screen.dart';
-// import 'package:my_first_app/Screens/Log_in_screen.dart';
-// import 'package:my_first_app/Screens/log_in_screen.dart';
-// import 'package:my_first_app/Screens/Log_in_screen.dart';
 
-// import 'package:my_first_app/Screens/Log_in_screen.dart';
+import 'component/whatsapp/mywhatsapp.dart';
+
+
 
 void main() {
   runApp(const MyApp());
@@ -32,21 +27,24 @@ class MyApp extends StatelessWidget {
           seedColor: const Color.fromRGBO(36, 97, 220, 1),
         ),
       ),
-      home: const MyHomeScreen(),
+      //home: const MyHomeScreen(),
+      home: const MyWhatsapp(),
+    
+      // home: const TonyStarkScreen(),
     );
   }
 }
 
-class ImageWidget extends StatelessWidget {
-  const ImageWidget({
-    super.key,
-  });
+// class ImageWidget extends StatelessWidget {
+//   const ImageWidget({
+//     super.key,
+//   });
 
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold();
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return const Scaffold();
+//   }
+// }
 
 
 
