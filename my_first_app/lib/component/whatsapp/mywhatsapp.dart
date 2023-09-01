@@ -84,10 +84,8 @@ class MyWhatsapp extends StatelessWidget {
           children: [
             MyCommunity(),
             ChatTab(),
-            // StatusTab(),
-            Status1Tab(),
-            // CallsTab(),
-            CallList(),
+            StatusTab(),
+            CallsTab(),
           ],
         ),
       ),
@@ -157,8 +155,8 @@ List<Map<String, dynamic>> calllist = [
   {'name': 'raj', 'message': '15 August, 3:27 pm', 'icon': Icons.call}
 ];
 
-class CallList extends StatelessWidget {
-  const CallList({super.key});
+class CallsTab extends StatelessWidget {
+  const CallsTab({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -200,7 +198,8 @@ class CallList extends StatelessWidget {
                 style: TextStyle(fontSize: 20),
               ),
             ),
-            ListView.builder(shrinkWrap: true,
+            ListView.builder(
+                shrinkWrap: true,
                 itemCount: 7,
                 itemBuilder: (context, index) {
                   return ListTile(
@@ -271,8 +270,8 @@ List<Map<String, dynamic>> statuslist = [
   {'name': 'raj', 'message': 'Today,9:00 am', 'image': 'assets/images/aj2.jpg'}
 ];
 
-class Status1Tab extends StatelessWidget {
-  const Status1Tab({super.key});
+class StatusTab extends StatelessWidget {
+  const StatusTab({super.key});
 
   @override
   Widget build(BuildContext context) {

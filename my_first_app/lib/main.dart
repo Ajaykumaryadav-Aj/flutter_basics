@@ -4,7 +4,7 @@
 // import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-import 'Screens/landing.dart';
+import 'component/whatsapp/mywhatsapp.dart';
 
 
 
@@ -27,8 +27,8 @@ class MyApp extends StatelessWidget {
           seedColor: const Color.fromRGBO(36, 97, 220, 1),
         ),
       ),
-      home: const MyHomeScreen(),
-      // home: const MyWhatsapp(),
+      // home: const MyHomeScreen(),
+      home: const MyWhatsapp(),
     
       // home: const TonyStarkScreen(),
     );
