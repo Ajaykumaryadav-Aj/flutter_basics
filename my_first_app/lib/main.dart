@@ -4,7 +4,7 @@
 // import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-import 'component/whatsapp/mywhatsapp.dart';
+import 'mydesign/my_ui_design.dart';
 
 
 
@@ -28,9 +28,9 @@ class MyApp extends StatelessWidget {
         ),
       ),
       // home: const MyHomeScreen(),
-      home: const MyWhatsapp(),
+      // home: const MyWhatsapp(),
     
-      // home: const TonyStarkScreen(),
+      home: const MyUiDesign(),
     );
   }
 }
