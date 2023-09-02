@@ -3,8 +3,8 @@
 // import 'dart:developer';
 // import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:my_first_app/sliver_app_bar.dart';
 
-import 'mydesign/my_ui_design.dart';
 
 
 
@@ -30,7 +30,8 @@ class MyApp extends StatelessWidget {
       // home: const MyHomeScreen(),
       // home: const MyWhatsapp(),
     
-      home: const MyUiDesign(),
+      // home: const MyUiDesign(),
+      home: const SliverScreen(),
     );
   }
 }

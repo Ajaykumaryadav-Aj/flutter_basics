@@ -202,14 +202,7 @@ class TonyStarkScreen extends StatelessWidget {
               ),
             ),
           ),
-          const Center(
-              child: Text(
-            "By: Saurabh",
-            style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.deepOrange),
-          ))
+          
         ],
       ),
     );
