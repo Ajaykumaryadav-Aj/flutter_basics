@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_first_app/component/whatsapp/contact_box.dart';
 
 class MyWhatsapp extends StatelessWidget {
   const MyWhatsapp({super.key});
@@ -337,7 +338,9 @@ class StatusTab extends StatelessWidget {
             itemBuilder: (context, index) {
               return ListTile(
                 leading: CircleAvatar(
-                  backgroundImage: AssetImage(statuslist[index]['image']),
+                  backgroundImage: AssetImage(
+                    statuslist[index]['image'],
+                  ),
                   radius: 25,
                 ),
                 title: Text(
@@ -392,7 +395,14 @@ class ChatTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => ChatMessagebox(),
+            ),
+          );
+        },
         backgroundColor: Colors.teal,
         child: const Icon(
           Icons.messenger_outline_sharp,
@@ -404,15 +414,29 @@ class ChatTab extends StatelessWidget {
         itemCount: chatlist.length,
         itemBuilder: (contex, index) {
           return ListTile(
-            // onTap: () {},
             //contentPadding: const EdgeInsets.symmetric(vertical: 8.0),
-            leading: CircleAvatar(
-              backgroundImage: AssetImage(
-                chatimage[index]['image'],
-              ),
-              // radius: 30,
+            leading: GestureDetector(
+              onTap: () {
+                showDialog(
+                  context: context,
+                  builder: (context) => CircleAvatar(
+                    backgroundImage: AssetImage(
+                      chatimage[index]['image'],
+                    ),
+                    // radius: 30,
 
-              // fit: BoxFit.cover,
+                    // fit: BoxFit.cover,
+                  ),
+                );
+              },
+              child: CircleAvatar(
+                backgroundImage: AssetImage(
+                  chatimage[index]['image'],
+                ),
+                // radius: 30,
+
+                // fit: BoxFit.cover,
+              ),
             ),
             title: Text(
               chatlist[index]['name'],
