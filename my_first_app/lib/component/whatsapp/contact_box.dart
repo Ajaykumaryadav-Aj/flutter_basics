@@ -16,9 +16,16 @@ List<Map<String, dynamic>> contactprsnlist = [
 ];
 
 List<Map<String, dynamic>> invitelist = [
-  {'name': 'Ramu', 'message': '', 'sidetext': 'Invite'},
-  {'name': 'aditya', 'message': '', 'sidetext': 'Invite'},
-  {'name': 'Monu', 'message': '', 'sidetext': 'Invite'}
+  {'icon': Icons.person, 'name': 'Ramu', 'message': '', 'sidetext': 'Invite'},
+  {'icon': Icons.person, 'name': 'aditya', 'message': '', 'sidetext': 'Invite'},
+  {'icon': Icons.person, 'name': 'Monu', 'message': '', 'sidetext': 'Invite'},
+  {
+    'icon': Icons.share,
+    'name': 'Share invite link',
+    'message': '',
+    'sidetext': ''
+  },
+  {'icon': Icons.help, 'name': 'Contacts help', 'message': '', 'sidetext': ''},
 ];
 
 class ChatMessagebox extends StatelessWidget {
@@ -124,8 +131,11 @@ class ChatMessagebox extends StatelessWidget {
               scrollDirection: Axis.vertical,
               itemBuilder: (context, index) {
                 return ListTile(
-                  leading: const CircleAvatar(
-                    child: Icon(Icons.person),
+                  leading: CircleAvatar(
+                    child: Icon(
+                      invitelist[index]['icon'],
+                      color: Colors.white,
+                    ),
                   ),
                   title: Text(
                     invitelist[index]['name'],

@@ -429,13 +429,23 @@ class ChatTab extends StatelessWidget {
                 onTap: () {
                   showDialog(
                     context: context,
-                    builder: (context) => CircleAvatar(
-                      backgroundImage: AssetImage(
-                        chatimage[index]['image'],
+                    builder: (context) => Dialog(
+                      child: Column(
+                        children: [
+                          CircleAvatar(
+                            backgroundImage: AssetImage(
+                              chatimage[index]['image'],
+                            ),
+                            radius: 30,
+                      
+                          ),
+                          const Row(
+                            children: [
+                              Icon(Icons.account_balance_wallet_sharp)
+                            ],
+                          )
+                        ],
                       ),
-                      // radius: 30,
-
-                      // fit: BoxFit.cover,
                     ),
                   );
                 },

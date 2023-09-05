@@ -36,13 +36,14 @@ class ChatBox extends StatelessWidget {
         ],
         title: const Row(
           children: [
-            CircleAvatar(
-              radius: 23,
-              backgroundImage: AssetImage('assets/images/Tiranga.jpg'),
+            Padding(
+              padding: EdgeInsets.only(right: 18),
+              child: CircleAvatar(
+                radius: 23,
+                backgroundImage: AssetImage('assets/images/Tiranga.jpg'),
+              ),
             ),
-            SizedBox(
-              width: 10,
-            ),
+            // SizedBox(width: 20),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -69,10 +70,20 @@ class ChatBox extends StatelessWidget {
                 child: TextField(
                   keyboardType: TextInputType.multiline,
                   decoration: const InputDecoration(
-                      icon: Icon(Icons.tag_faces),
-                      suffixIcon: Icon(Icons.attach_file_rounded),
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(50)))),
+                    icon: Icon(Icons.tag_faces),
+                    suffix: Row(
+                      children: [
+                        Icon(Icons.attach_file_rounded),
+                        Icon(Icons.currency_rupee_sharp),
+                        Icon(Icons.camera_alt)
+                      ],
+                    ),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(50),
+                      ),
+                    ),
+                  ),
                   onTap: () {
                     log('message');
                   },
