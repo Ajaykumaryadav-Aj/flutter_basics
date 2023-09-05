@@ -13,6 +13,9 @@ List<Map<String, dynamic>> contactprsnlist = [
   {'name': 'Maneger', 'message': '😎', 'sidetext': ''},
   {'name': 'saurabh', 'message': 'keep smiling😀', 'sidetext': ''},
   {'name': 'Raju', 'message': 'Urgent calls only', 'sidetext': ''},
+];
+
+List<Map<String, dynamic>> invitelist = [
   {'name': 'Ramu', 'message': '', 'sidetext': 'Invite'},
   {'name': 'aditya', 'message': '', 'sidetext': 'Invite'},
   {'name': 'Monu', 'message': '', 'sidetext': 'Invite'}
@@ -47,42 +50,45 @@ class ChatMessagebox extends StatelessWidget {
           ),
         ],
       ),
-      body: Column(
-        children: [
-          ListView.builder(
-            shrinkWrap: true,
-            itemCount: contactlist.length,
-            itemBuilder: (context, index) {
-              return ListTile(
-                leading: CircleAvatar(
-                  backgroundColor: Colors.teal,
-                  child: Icon(
-                    contactlist[index]['icon'],
-                    color: Colors.white,
-                  ),
-                ),
-                title: Text(
-                  contactlist[index]['New'],
-                  style: const TextStyle(
-                      fontWeight: FontWeight.bold, fontSize: 18),
-                ),
-                trailing: Icon(
-                  contactlist[index]['sideicon'],
-                  size: 30,
-                ),
-              );
-            },
-          ),
-          const Padding(
-            padding: EdgeInsets.fromLTRB(0, 20, 215, 0),
-            child: Text(
-              'Contacts on WhatsApp',
-              style: TextStyle(fontSize: 16),
-            ),
-          ),
-          ListView.builder(
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            ListView.builder(
+              physics: const NeverScrollableScrollPhysics(),
               shrinkWrap: true,
-              itemCount: 8,
+              itemCount: contactlist.length,
+              itemBuilder: (context, index) {
+                return ListTile(
+                  leading: CircleAvatar(
+                    backgroundColor: Colors.teal,
+                    child: Icon(
+                      contactlist[index]['icon'],
+                      color: Colors.white,
+                    ),
+                  ),
+                  title: Text(
+                    contactlist[index]['New'],
+                    style: const TextStyle(
+                        fontWeight: FontWeight.bold, fontSize: 18),
+                  ),
+                  trailing: Icon(
+                    contactlist[index]['sideicon'],
+                    size: 30,
+                  ),
+                );
+              },
+            ),
+            const Padding(
+              padding: EdgeInsets.fromLTRB(0, 20, 215, 0),
+              child: Text(
+                'Contacts on WhatsApp',
+                style: TextStyle(fontSize: 16),
+              ),
+            ),
+            ListView.builder(
+              physics: const NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              itemCount: contactprsnlist.length,
               itemBuilder: (context, index) {
                 return ListTile(
                   leading: CircleAvatar(
@@ -102,8 +108,39 @@ class ChatMessagebox extends StatelessWidget {
                     style: const TextStyle(fontSize: 16, color: Colors.teal),
                   ),
                 );
-              },)
-        ],
+              },
+            ),
+            const Padding(
+              padding: EdgeInsets.fromLTRB(0, 10, 250, 0),
+              child: Text(
+                'Invite to WhatsApp',
+                style: TextStyle(fontSize: 16),
+              ),
+            ),
+            ListView.builder(
+              itemCount: invitelist.length,
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              scrollDirection: Axis.vertical,
+              itemBuilder: (context, index) {
+                return ListTile(
+                  leading: const CircleAvatar(
+                    child: Icon(Icons.person),
+                  ),
+                  title: Text(
+                    invitelist[index]['name'],
+                    style: const TextStyle(
+                        fontWeight: FontWeight.bold, fontSize: 17),
+                  ),
+                  trailing: Text(
+                    invitelist[index]['sidetext'],
+                    style: const TextStyle(fontSize: 15, color: Colors.teal),
+                  ),
+                );
+              },
+            )
+          ],
+        ),
       ),
     );
   }
