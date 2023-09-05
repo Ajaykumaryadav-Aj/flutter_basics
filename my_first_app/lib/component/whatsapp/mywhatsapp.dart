@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_first_app/component/whatsapp/chat_box.dart';
 import 'package:my_first_app/component/whatsapp/contact_box.dart';
 
 class MyWhatsapp extends StatelessWidget {
@@ -134,24 +135,24 @@ List<Map<String, dynamic>> calllist = [
   {
     'name': 'Mrs',
     'message': 'Yesterday,4:40 pm',
-    'icon': Icons.missed_video_call,
+    'icon': Icons.videocam,
   },
   {'name': 'Maneger', 'message': 'Today, 6:00 am', 'icon': Icons.call},
   {'name': 'saurabh', 'message': '31 August, 2:09 pm', 'icon': Icons.call},
   {
     'name': 'Raju',
     'message': '21 August, 8:05 am',
-    'icon': Icons.missed_video_call,
+    'icon': Icons.videocam,
   },
   {
     'name': 'sonu',
     'message': '20 August, 5:00 am',
-    'icon': Icons.missed_video_call,
+    'icon': Icons.videocam,
   },
   {
     'name': 'abhijeet',
     'message': '18 August, 7:20 pm',
-    'icon': Icons.missed_video_call,
+    'icon': Icons.videocam,
   },
   {'name': 'raj', 'message': '15 August, 3:27 pm', 'icon': Icons.call}
 ];
@@ -201,7 +202,7 @@ class CallsTab extends StatelessWidget {
             ),
             ListView.builder(
                 shrinkWrap: true,
-                itemCount: 7,
+                itemCount: calllist.length,
                 itemBuilder: (context, index) {
                   return ListTile(
                     leading: CircleAvatar(
@@ -399,7 +400,7 @@ class ChatTab extends StatelessWidget {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => ChatMessagebox(),
+              builder: (context) => const ChatMessagebox(),
             ),
           );
         },
@@ -413,44 +414,55 @@ class ChatTab extends StatelessWidget {
       body: ListView.builder(
         itemCount: chatlist.length,
         itemBuilder: (contex, index) {
-          return ListTile(
-            //contentPadding: const EdgeInsets.symmetric(vertical: 8.0),
-            leading: GestureDetector(
-              onTap: () {
-                showDialog(
-                  context: context,
-                  builder: (context) => CircleAvatar(
-                    backgroundImage: AssetImage(
-                      chatimage[index]['image'],
-                    ),
-                    // radius: 30,
-
-                    // fit: BoxFit.cover,
-                  ),
-                );
-              },
-              child: CircleAvatar(
-                backgroundImage: AssetImage(
-                  chatimage[index]['image'],
+          return GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const ChatBox(),
                 ),
-                // radius: 30,
+              );
+            },
+            child: ListTile(
+              //contentPadding: const EdgeInsets.symmetric(vertical: 8.0),
+              leading: GestureDetector(
+                onTap: () {
+                  showDialog(
+                    context: context,
+                    builder: (context) => CircleAvatar(
+                      backgroundImage: AssetImage(
+                        chatimage[index]['image'],
+                      ),
+                      // radius: 30,
 
-                // fit: BoxFit.cover,
+                      // fit: BoxFit.cover,
+                    ),
+                  );
+                },
+                child: CircleAvatar(
+                  backgroundImage: AssetImage(
+                    chatimage[index]['image'],
+                  ),
+                  // radius: 30,
+
+                  // fit: BoxFit.cover,
+                ),
               ),
-            ),
-            title: Text(
-              chatlist[index]['name'],
-              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-            subtitle: Text(
-              chatlist[index]['message'],
-              style: const TextStyle(fontSize: 17),
-            ),
-            trailing: const Padding(
-              padding: EdgeInsets.only(right: 15),
-              child: Text(
-                '6:04 am',
-                style: TextStyle(fontSize: 14),
+              title: Text(
+                chatlist[index]['name'],
+                style:
+                    const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+              subtitle: Text(
+                chatlist[index]['message'],
+                style: const TextStyle(fontSize: 17),
+              ),
+              trailing: const Padding(
+                padding: EdgeInsets.only(right: 15),
+                child: Text(
+                  '6:04 am',
+                  style: TextStyle(fontSize: 14),
+                ),
               ),
             ),
           );
