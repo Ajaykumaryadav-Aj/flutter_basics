@@ -3,15 +3,15 @@ class ProductModels {
   final String discription;
   final int price;
   final String image;
-  final String cart;
-  final bool;
+  final bool incart;
+  
 
   ProductModels({
     required this.name,
     required this.discription,
     required this.price,
     required this.image,
-    required this.cart,
-    required this.bool
+    required this.incart,
+    
   });
 }

@@ -2,9 +2,11 @@
 
 // import 'dart:developer';
 // import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
-import 'package:my_first_app/screens/product_screen.dart';
 
+import 'package:flutter/material.dart';
+import 'package:my_first_app/providers/cart_provider.dart';
+import 'package:my_first_app/screens/product_screen.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,25 +17,24 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: "flipkart",
-      theme: ThemeData(
-        appBarTheme: const AppBarTheme(backgroundColor: Colors.blue),
-        useMaterial3: true,
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color.fromRGBO(36, 97, 220, 1),
-          
+    return MultiProvider(providers: [ChangeNotifierProvider(create: (context) => CartProvider(),)],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: "flipkart",
+        theme: ThemeData(
+          appBarTheme: const AppBarTheme(backgroundColor: Colors.blue),
+          useMaterial3: true,
+          colorScheme: ColorScheme.fromSeed(
+            seedColor: const Color.fromRGBO(36, 97, 220, 1),
+          ),
         ),
-      ),
-      
-      // home: const MyHomeScreen(),
-      // home: const MyWhatsapp(),
-      home: const ProductModels(),
-
-      // home: const MyUiDesign(),
-      // home: const SliverScreen(),
-    );
     
+        // home: const MyHomeScreen(),
+        // home: const MyWhatsapp(),
+        home: const ProductScreen(),
+        // home: const MyUiDesign(),
+        // home: const SliverScreen(),
+      ),
+    );
   }
 }
