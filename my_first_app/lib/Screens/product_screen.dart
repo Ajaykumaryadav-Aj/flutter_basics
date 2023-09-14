@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:my_first_app/providers/cart_provider.dart';
 import 'package:my_first_app/screens/cart_screen.dart';
-import 'package:my_first_app/utils/database.dart';
 import 'package:provider/provider.dart';
 
-import '../utils/database.dart';
 
 // List<Map<String, dynamic>> product = [
 //   {'image': 'https://picsum.photos/200/300'}
@@ -33,14 +31,18 @@ class _ProductModelsState extends State<ProductScreen> {
       appBar: AppBar(
         actions: [
           IconButton(
-              onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const Cartscreen(),
-                    ));
-              },
-              icon: const Icon(Icons.shopping_cart))
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const Cartscreen(),
+                  ));
+            },
+            icon: const Icon(
+              Icons.shopping_cart,
+              color: Colors.amber,
+            ),
+          )
         ],
         title: const Text('Product'),
       ),
@@ -77,7 +79,8 @@ class _ProductModelsState extends State<ProductScreen> {
                         alignment: Alignment.centerRight,
                         child: Text(
                           'RS.${products.products[index].price}',
-                          style: const TextStyle(fontSize: 23),
+                          style: const TextStyle(
+                              fontSize: 23, fontWeight: FontWeight.bold),
                         ),
                       ),
                       const SizedBox(
