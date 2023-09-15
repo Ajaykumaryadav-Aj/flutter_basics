@@ -57,6 +57,9 @@ class _LoginScreenState extends State<LoginScreen1> {
                 );
               },
             ),
+            const SizedBox(
+              height: 30,
+            ),
             // Text(
             //   emailcontroller.text,
             //   style: const TextStyle(fontSize: 25),
