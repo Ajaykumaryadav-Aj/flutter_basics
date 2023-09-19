@@ -12,7 +12,7 @@ class ApiUserScreen extends StatefulWidget {
 
 class _ApiUserScreenState extends State<ApiUserScreen> {
   final service = UserService();
-  
+
   @override
   void initState() {
     super.initState();
@@ -21,9 +21,14 @@ class _ApiUserScreenState extends State<ApiUserScreen> {
 
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Api user'),
-      ),
-    );
+        appBar: AppBar(
+          title: const Text('Api user'),
+        ),
+        body: FutureBuilder(
+          future: service.getUsersApi(),
+          builder: (BuildContext, snapshot) {
+            return ListTile();
+          },
+        ));
   }
 }
