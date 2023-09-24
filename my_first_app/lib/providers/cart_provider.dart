@@ -14,7 +14,7 @@ class CartProvider extends ChangeNotifier {
   );
 
   List<ProductModels> cartproduct = [];
-  void Addtocart(ProductModels product) {
+  void addtoCart(ProductModels product) {
     cartproduct.add(product);
     notifyListeners();
   }

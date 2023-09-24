@@ -20,7 +20,7 @@ class _ProductModelsState extends State<ProductScreen> {
 
   @override
   void initState() {
-    // TODO: implement initState
+    
     super.initState();
     provider = Provider.of<CartProvider>(context, listen: false);
   }
@@ -91,9 +91,9 @@ class _ProductModelsState extends State<ProductScreen> {
                           if (products.cartproduct
                               .contains(products.products[index])) {
                           } else {
-                            provider.Addtocart(products.products[index]);
+                            provider.addtoCart(products.products[index]);
                           }
-                          provider.Addtocart(products.products[index]);
+                          provider.addtoCart(products.products[index]);
                         },
                         icon: Icon(products.cartproduct
                                 .contains(products.products[index])

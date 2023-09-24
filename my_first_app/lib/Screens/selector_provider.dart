@@ -17,7 +17,7 @@ class _ProductModelsState extends State<SelectorScreen> {
 
   @override
   void initState() {
-    // TODO: implement initState
+  
     super.initState();
     provider = Provider.of<CartProvider>(context, listen: false);
   }
@@ -90,10 +90,10 @@ class _ProductModelsState extends State<SelectorScreen> {
                               if (provider.cartproduct
                                   .contains(products[index])) {
                               } else {
-                                provider.Addtocart(products[index]);
+                                provider.addtoCart(products[index]);
                               }
                               setState(() {});
-                              provider.Addtocart(products[index]);
+                              provider.addtoCart(products[index]);
                             },
                             icon: Icon(
                                 provider.cartproduct.contains(products[index])

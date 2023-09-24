@@ -1,7 +1,6 @@
-import 'dart:convert';
 
 class ApiUser {
-  final int id;
+  // final int id;
   final String name;
   final String userName;
   final String phone;
@@ -10,7 +9,7 @@ class ApiUser {
   final Company company;
 
   ApiUser({
-    required this.id,
+    // required this.id,
     required this.name,
     required this.userName,
     required this.phone,
@@ -21,7 +20,7 @@ class ApiUser {
 
   factory ApiUser.fromJson(Map<String, dynamic> json) {
     return ApiUser(
-      id: json['id'],
+      // id: json['id'],
       name: json['name'],
       userName: json['userName'],
       phone: json['phone'],
