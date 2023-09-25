@@ -22,7 +22,7 @@ class ApiUser {
     return ApiUser(
       // id: json['id'],
       name: json['name'],
-      userName: json['userName'],
+      userName: json['username'],
       phone: json['phone'],
       website: json['website'],
       address: Address.fromJson(json['address']),
@@ -47,7 +47,7 @@ class Address {
     return Address(
         street: json['id'],
         suite: json['name'],
-        city: json['userName'],
+        city: json['username'],
         zipcode: json['phone']);
   }
 }

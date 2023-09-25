@@ -12,8 +12,7 @@ class BaseServices {
       Uri.parse(url),
       headers: {'Content-Type': 'application/json'},
     );
-    // log(response.statusCode.toString(), name: 'status');
-    //     log(response.body.toString(), name: 'body');
+  
     return response;
   }
 }

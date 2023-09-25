@@ -25,8 +25,8 @@ class _ApiUserScreenState extends State<ApiUserScreen> {
         title: const Text('Api user'),
       ),
       body: FutureBuilder(
-        // future: service.getUsersApi(),
-        builder: (BuildContext context, AsyncSnapshot<List<ApiUser>> snapshot) {
+        future: service.getUsersApi(),
+        builder: (BuildContext context, AsyncSnapshot<List<ApiUser>?> snapshot) {
           return !snapshot.hasData
               ? const Center(child: CircularProgressIndicator())
               : snapshot.hasError || snapshot.data == null
