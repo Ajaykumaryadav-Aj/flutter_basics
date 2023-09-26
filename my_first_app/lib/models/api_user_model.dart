@@ -45,25 +45,25 @@ class Address {
 
   factory Address.fromJson(Map<String, dynamic> json) {
     return Address(
-        street: json['id'],
-        suite: json['name'],
-        city: json['username'],
-        zipcode: json['phone']);
+        street: json['street'],
+        suite: json['suite'],
+        city: json['city'],
+        zipcode: json['zipcode']);
   }
 }
 
 class Company {
   final String name;
-  final String catchphrase;
+  final String catchPhrase;
   final String bs;
 
   Company({
     required this.name,
-    required this.catchphrase,
+    required this.catchPhrase,
     required this.bs,
   });
   factory Company.fromJson(Map<String, dynamic> json) {
     return Company(
-        name: json['name'], catchphrase: json['catchphrase'], bs: json['bs']);
+        name: json['name'], catchPhrase: json['catchPhrase'], bs: json['bs']);
   }
 }

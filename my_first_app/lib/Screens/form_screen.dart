@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 
 class FormScreen extends StatefulWidget {
   const FormScreen({super.key});
@@ -12,6 +13,12 @@ class FormScreen extends StatefulWidget {
 class _FormScreenState extends State<FormScreen> {
   final _formkey = GlobalKey<FormState>();
   String? priceError;
+  void pick(ImageSource source) async {
+    final picker = ImagePicker();
+    final pickedFile = await picker.pickImage(source: source);
+    log(pickedFile.toString(), name: 'pickedfile');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,6 +30,12 @@ class _FormScreenState extends State<FormScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Container(
+              height: 100,
+              width: 100,
+              color: const Color.fromARGB(255, 142, 216, 144),
+              child: const Icon(Icons.add),
+            ),
             const AppTextField(
               labeltext: 'Enter product',
               errortext: 'this product is required',
@@ -37,7 +50,7 @@ class _FormScreenState extends State<FormScreen> {
               onchanged: (value) {
                 final val = int.tryParse(value);
                 if (val == null) {
-                  priceError = 'Entered value in valid';
+                  priceError = 'Entered value in invalid';
                 } else {
                   priceError = null;
                 }
@@ -51,12 +64,13 @@ class _FormScreenState extends State<FormScreen> {
               labeltext: 'name',
             ),
             ElevatedButton(
-                onPressed: () {
-                  if (_formkey.currentState!.validate()) {
-                    log('Product Added');
-                  }
-                },
-                child: const Text('Add'))
+              onPressed: () {
+                if (_formkey.currentState!.validate()) {
+                  log('Product Added');
+                }
+              },
+              child: const Text('Add'),
+            )
           ],
         ),
       ),

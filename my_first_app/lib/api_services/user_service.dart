@@ -7,7 +7,7 @@ import 'package:my_first_app/utils/api_urls.dart';
 
 class UserService extends BaseServices {
   Future<List<ApiUser>?> getUsersApi() async {
-    try {
+    // try {
       final response = await getHttp(ApiUrlis.user);
       log(response.body, name: 'getUsersApi');
       final userMapList = json.decode(response.body);
@@ -19,9 +19,9 @@ class UserService extends BaseServices {
 
       log(userMapList.toString(), name: 'getUserapi response');
       return userList;
-    } catch (e, s) {
-      log(e.toString(), name: 'error getuserApi', stackTrace: s);
-      return null;
-    }
+    // } catch (e, s) {
+    //   log(e.toString(), name: 'error getuserApi', stackTrace: s);
+    //   return null;
+    // }
   }
 }

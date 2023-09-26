@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:my_first_app/providers/auth_provider.dart';
 import 'package:my_first_app/providers/cart_provider.dart';
-import 'package:my_first_app/screens/api_user_screen.dart';
 import 'package:my_first_app/screens/form_screen.dart';
-
+import 'package:my_first_app/screens/picker_screen.dart';
+ 
 import 'package:provider/provider.dart';
 
 void main() {
@@ -43,7 +43,9 @@ class MyApp extends StatelessWidget {
         // home: const CountScreens(),
         // home: const ApiUserScreen(),
         // home: const RandomUserScreen(),
-home: FormScreen(),
+        // home: const PostScreen(),
+          // home: const FormScreen(),
+          home: const PickerScreen(),
       ),
     );
   }
