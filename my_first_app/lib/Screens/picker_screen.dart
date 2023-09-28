@@ -60,7 +60,7 @@ class _PickerScreenState extends State<PickerScreen> {
                   ? GestureDetector(
                       onTap: pickmultiimage,
                       child: Container(
-                        margin: EdgeInsets.all(2),
+                        margin: const EdgeInsets.all(2),
                         height: 75,
                         width: 75,
                         color: const Color.fromARGB(255, 243, 224, 167),

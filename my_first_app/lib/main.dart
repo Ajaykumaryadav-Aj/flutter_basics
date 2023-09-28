@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:my_first_app/providers/auth_provider.dart';
 import 'package:my_first_app/providers/cart_provider.dart';
-import 'package:my_first_app/screens/form_screen.dart';
-import 'package:my_first_app/screens/picker_screen.dart';
- 
+import 'package:my_first_app/screens/advanced_screen.dart';
+
 import 'package:provider/provider.dart';
 
 void main() {
@@ -16,8 +15,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      providers:  [
-       ChangeNotifierProvider(create: (context) => CartProvider()),
+      providers: [
+        ChangeNotifierProvider(create: (context) => CartProvider()),
         ChangeNotifierProvider(create: (context) => AuthProvider()),
         // ChangeNotifierProvider(create: (context) => CounterProvider())
       ],
@@ -44,8 +43,9 @@ class MyApp extends StatelessWidget {
         // home: const ApiUserScreen(),
         // home: const RandomUserScreen(),
         // home: const PostScreen(),
-          // home: const FormScreen(),
-          home: const PickerScreen(),
+        // home: const FormScreen(),
+        // home: const PickerScreen(),
+        home: const AdvancedScreen(),
       ),
     );
   }

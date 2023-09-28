@@ -8,11 +8,12 @@ class BaseServices {
     final url = ApiUrlis.baseUrl + api;
 
     log(url, name: 'getHttp');
-    final response = await http.get(
+    final response = await 
+    http.get(
       Uri.parse(url),
       headers: {'Content-Type': 'application/json'},
     );
-  
+
     return response;
   }
 }
