@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_first_app/api_services/random_user_api.dart';
 import 'package:my_first_app/api_services/user_service.dart';
+import 'package:my_first_app/models/random_user_model.dart';
 
 class RandomUserScreen extends StatefulWidget {
   const RandomUserScreen({super.key});

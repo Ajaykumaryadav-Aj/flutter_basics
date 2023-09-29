@@ -3,14 +3,14 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-class AdvancedScreen extends StatefulWidget {
-  const AdvancedScreen({super.key});
+class Advancedwidgets extends StatefulWidget {
+  const Advancedwidgets({super.key});
 
   @override
-  State<AdvancedScreen> createState() => _AdvancedScreenState();
+  State<Advancedwidgets> createState() => AdvancedWidgets();
 }
 
-class _AdvancedScreenState extends State<AdvancedScreen> {
+class AdvancedWidgets extends State<Advancedwidgets> {
   bool scale = false;
   @override
   Widget build(BuildContext context) {
