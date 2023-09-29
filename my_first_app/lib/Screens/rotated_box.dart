@@ -1,19 +1,19 @@
 
 import 'package:flutter/material.dart';
 
-class Pageview extends StatefulWidget {
-  const Pageview({super.key});
+class Rotatedbox extends StatefulWidget {
+  const Rotatedbox({super.key});
 
   @override
-  State<Pageview> createState() => _PageviewState();
+  State<Rotatedbox> createState() => _PageviewState();
 }
 
-class _PageviewState extends State<Pageview> {
+class _PageviewState extends State<Rotatedbox> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('Pageview'),
+          title: const Text('Rotatedbox'),
         ),
         body: Center(
           child: Column(
