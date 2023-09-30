@@ -1,11 +1,13 @@
-// import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 
-// class Utils {
-//   static bool scrollNotification (Object? notification voidcallBack callback){
-//     if (notification is ScrollEndNotification) {
-//       final before = notification.metrics.extentBefore;
-//       final max = notification.metrics.e
+class Utils {
+  static bool scrollNotification (Object? notification, VoidCallback callback){
+    if (notification is ScrollEndNotification) {
+      final before = notification.metrics.extentBefore;
+      final max = notification.metrics.maxScrollExtent;
+      if(before == max) callback();
       
-//     }
-//   }
-// }
+    }
+    return false;
+  }
+}

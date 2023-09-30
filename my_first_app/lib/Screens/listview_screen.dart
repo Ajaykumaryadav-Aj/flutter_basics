@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_first_app/utils/utils.dart';
 
 List<Map<String, dynamic>> tablelist = [
   {'name': 'ajay', 'age': '20'},
@@ -40,14 +41,23 @@ class ListviewScreen extends StatefulWidget {
 
 class _ListviewScreenState extends State<ListviewScreen> {
   List<Map<String, dynamic>> apilist = [];
+  int limit = 20;
+  int myoffset = 0;
+  bool paginate = true;
 
-  Future<void> getList({int limit = 0, int offset = 20}) async {
+  Future<void> getList({int limit = 20, int offset = 0}) async {
+    if (!paginate) return;
+
     setState(() {
       loader = true;
     });
-    await Future.delayed(const Duration(seconds: 3));
-    apilist = apilist + tablelist.getRange(limit, offset).toList();
+    await Future.delayed(const Duration(seconds: 2));
+    List<Map<String, dynamic>> templist =
+        apilist + tablelist.getRange(offset, limit).toList();
+    apilist += templist;
+    myoffset = offset + limit;
     setState(() {
+      if (templist.length < 20) paginate = false;
       loader = false;
     });
   }
@@ -64,7 +74,7 @@ class _ListviewScreenState extends State<ListviewScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Listview screen'),
+        title: const Text('Listview screen'),                                               
       ),
       body: Scrollbar(
         thickness: 11,
@@ -73,6 +83,8 @@ class _ListviewScreenState extends State<ListviewScreen> {
         thumbVisibility: true,
         scrollbarOrientation: ScrollbarOrientation.left,
         child: NotificationListener(
+          onNotification: (notification) => Utils.scrollNotification(
+              notification, () => getList(offset: myoffset)),
           child: SingleChildScrollView(
             child: Column(
               children: [
@@ -90,7 +102,7 @@ class _ListviewScreenState extends State<ListviewScreen> {
                     );
                   },
                   itemBuilder: (context, index) {
-                    return index + 1 == apilist.length
+                    return index == apilist.length
                         ? const Center(
                             child: CircularProgressIndicator(),
                           )

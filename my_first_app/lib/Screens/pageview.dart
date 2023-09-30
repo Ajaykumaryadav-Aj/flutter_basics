@@ -61,6 +61,10 @@ class _PageviewScreenState extends State<PageviewScreen> {
                                 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRosf6SboIOXr0jlI4zPENgKHR6HVTAON-87A&usqp=CAU'),
                             fit: BoxFit.fill),
                       ),
+                      child: const Text(
+                        'Picture 1',
+                        style: TextStyle(color: Colors.amber),
+                      ),
                     ),
                     Container(
                       alignment: Alignment.center,
