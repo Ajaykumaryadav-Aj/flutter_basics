@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:my_first_app/providers/auth_provider.dart';
 import 'package:my_first_app/providers/cart_provider.dart';
-import 'package:my_first_app/screens/cliper_screen.dart';
+import 'package:my_first_app/screens/material_widget_screen.dart';
 
 import 'package:provider/provider.dart';
+
+final messangerkey = GlobalKey<ScaffoldMessengerState>();
 
 void main() {
   runApp(const MyApp());
@@ -21,6 +23,7 @@ class MyApp extends StatelessWidget {
         // ChangeNotifierProvider(create: (context) => CounterProvider())
       ],
       child: MaterialApp(
+        scaffoldMessengerKey: messangerkey,
         debugShowCheckedModeBanner: false,
 
         theme: ThemeData(
@@ -50,7 +53,8 @@ class MyApp extends StatelessWidget {
         // home: const Rotatedbox(),
         // home: const PageviewScreen(),
         // home: const PaintScreen(),
-        home: const CliperScreeen(),
+        // home: const CliperScreeen(),
+        home: const MaterialScreen(),
       ),
     );
   }
