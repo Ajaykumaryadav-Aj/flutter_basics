@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:my_first_app/my_todo/todo_screen.dart';
 import 'package:my_first_app/providers/auth_provider.dart';
 import 'package:my_first_app/providers/cart_provider.dart';
-import 'package:my_first_app/screens/material_widget_screen.dart';
+import 'package:my_first_app/providers/page_provider.dart';
 
 import 'package:provider/provider.dart';
 
 final messangerkey = GlobalKey<ScaffoldMessengerState>();
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 
@@ -20,6 +22,7 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (context) => CartProvider()),
         ChangeNotifierProvider(create: (context) => AuthProvider()),
+        ChangeNotifierProvider(create: (context) => PageProvider())
         // ChangeNotifierProvider(create: (context) => CounterProvider())
       ],
       child: MaterialApp(
@@ -54,7 +57,9 @@ class MyApp extends StatelessWidget {
         // home: const PageviewScreen(),
         // home: const PaintScreen(),
         // home: const CliperScreeen(),
-        home: const MaterialScreen(),
+        // home: const MaterialScreen(),
+        // home: const PaginationScreen(),
+        home: const TodoScreen(),
       ),
     );
   }

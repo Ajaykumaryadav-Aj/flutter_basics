@@ -8,20 +8,31 @@ import 'package:my_first_app/utils/api_urls.dart';
 class UserService extends BaseServices {
   Future<List<ApiUser>?> getUsersApi() async {
     // try {
-      final response = await getHttp(ApiUrlis.user);
-      log(response.body, name: 'getUsersApi');
-      final userMapList = json.decode(response.body);
-      // as List<Map<String, dynamic>>;
+    final response = await getHttp(ApiUrlis.user);
+    log(response.body, name: 'getUsersApi');
+    final userMapList = json.decode(response.body);
+    // as List<Map<String, dynamic>>;
 
-      if (response.statusCode != 200) return null;
-      List<ApiUser> userList =
-          List<ApiUser>.from(userMapList.map((e) => ApiUser.fromJson(e)));
+    if (response.statusCode != 200) return null;
+    List<ApiUser> userList =
+        List<ApiUser>.from(userMapList.map((e) => ApiUser.fromJson(e)));
 
-      log(userMapList.toString(), name: 'getUserapi response');
-      return userList;
+    log(userMapList.toString(), name: 'getUserapi response');
+    return userList;
     // } catch (e, s) {
     //   log(e.toString(), name: 'error getuserApi', stackTrace: s);
     //   return null;
     // }
+  }
+
+  Future<List<Map<String, dynamic>>> getPhotosApi(int limit, int offset) async {
+    final api = '${ApiUrlis.photolist}?page=$offset&limit=100';
+
+    final response = await getHttp(api);
+    log(response.body, name: 'getPhotosApi');
+    if (response.statusCode == 200) {
+      return json.decode(response.body);
+    }
+    return [];
   }
 }

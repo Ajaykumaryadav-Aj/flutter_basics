@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_first_app/utils/myshared.dart';
 import 'package:my_first_app/utils/utils.dart';
 
 enum Gender { male, female, other }
@@ -14,8 +15,14 @@ class _MaterialScreenState extends State<MaterialScreen> {
   // Gender selectedGender = Gender.male;
   int selectedGender = 1;
   double currentSliderValue = 10;
-  bool light = true;
+  // bool light = true;
   String? date;
+  late bool light;
+  @override
+  void initState() {
+    super.initState();
+    // light = Myshared();
+  }
 
   @override
   Widget build(BuildContext context) {
