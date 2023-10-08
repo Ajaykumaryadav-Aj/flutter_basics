@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:my_first_app/my_todo/todo_screen.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:my_first_app/my_todo/hive/db_hive.dart';
 import 'package:my_first_app/providers/auth_provider.dart';
 import 'package:my_first_app/providers/cart_provider.dart';
 import 'package:my_first_app/providers/page_provider.dart';
+import 'package:my_first_app/screens/pagination_screen.dart';
 
 import 'package:provider/provider.dart';
 
 final messangerkey = GlobalKey<ScaffoldMessengerState>();
 
-void main() {
+void main() async {
+  await Hive.initFlutter();
+  await Hive.openBox(boxName);
   WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
@@ -59,7 +63,7 @@ class MyApp extends StatelessWidget {
         // home: const CliperScreeen(),
         // home: const MaterialScreen(),
         // home: const PaginationScreen(),
-        home: const TodoScreen(),
+        home: const PaginationScreen(),
       ),
     );
   }

@@ -6,7 +6,7 @@ import 'package:my_first_app/models/api_user_model.dart';
 import 'package:my_first_app/utils/api_urls.dart';
 
 class UserService extends BaseServices {
-  Future<List<ApiUser>?> getUsersApi() async {
+  Future<List<ApiUser>?> getUsersApi(int limit) async {
     // try {
     final response = await getHttp(ApiUrlis.user);
     log(response.body, name: 'getUsersApi');
@@ -25,7 +25,7 @@ class UserService extends BaseServices {
     // }
   }
 
-  Future<List<Map<String, dynamic>>> getPhotosApi(int limit, int offset) async {
+  Future getPhotosApi(int limit, int offset) async {
     final api = '${ApiUrlis.photolist}?page=$offset&limit=100';
 
     final response = await getHttp(api);

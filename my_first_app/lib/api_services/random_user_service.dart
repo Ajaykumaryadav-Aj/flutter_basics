@@ -4,7 +4,7 @@ import 'dart:developer';
 import 'package:my_first_app/api_services/base_service.dart';
 import 'package:my_first_app/models/random_user_model.dart';
 
-class UserService extends BaseServices {}
+class UserService1 extends BaseServices {}
 
 Future<RandomUser?> getRandomUserApi() async {
   try {
