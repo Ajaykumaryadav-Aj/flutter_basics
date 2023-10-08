@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:my_first_app/my_todo/hive/db_hive.dart';
+import 'package:my_first_app/hive/db_hive.dart';
+import 'package:my_first_app/hive/hive_screen.dart';
+import 'package:my_first_app/hive/todo.dart';
 import 'package:my_first_app/providers/auth_provider.dart';
 import 'package:my_first_app/providers/cart_provider.dart';
 import 'package:my_first_app/providers/page_provider.dart';
-import 'package:my_first_app/screens/pagination_screen.dart';
 
 import 'package:provider/provider.dart';
 
@@ -14,6 +15,7 @@ void main() async {
   await Hive.initFlutter();
   await Hive.openBox(boxName);
   WidgetsFlutterBinding.ensureInitialized();
+  Hive.registerAdapter(TodoAdapter());
   runApp(const MyApp());
 }
 
@@ -63,7 +65,8 @@ class MyApp extends StatelessWidget {
         // home: const CliperScreeen(),
         // home: const MaterialScreen(),
         // home: const PaginationScreen(),
-        home: const PaginationScreen(),
+        // home: const PaginationScreen(),
+        home: const HiveTodoScreen(),
       ),
     );
   }

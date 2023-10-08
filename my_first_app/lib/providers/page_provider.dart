@@ -13,11 +13,7 @@ class PageProvider extends ChangeNotifier {
 
   List<PhotoModel> photos = [];
 
-  // Future<void> getPhotosApi({int limit = 10, int offset = 1}) async {
-  //   final response = service.getPhotosApi(limit, offset);
-  //   debugPrint('$response getPhotos');
-
-  // }
+ 
 
   List<TodoModel> todos = [];
 
