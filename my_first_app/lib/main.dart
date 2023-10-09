@@ -1,21 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:hive_flutter/hive_flutter.dart';
-import 'package:my_first_app/hive/db_hive.dart';
-import 'package:my_first_app/hive/hive_screen.dart';
-import 'package:my_first_app/hive/todo.dart';
 import 'package:my_first_app/providers/auth_provider.dart';
 import 'package:my_first_app/providers/cart_provider.dart';
 import 'package:my_first_app/providers/page_provider.dart';
+import 'package:my_first_app/screens/picker_screen.dart';
 
 import 'package:provider/provider.dart';
 
 final messangerkey = GlobalKey<ScaffoldMessengerState>();
 
 void main() async {
-  await Hive.initFlutter();
-  await Hive.openBox(boxName);
-  WidgetsFlutterBinding.ensureInitialized();
-  Hive.registerAdapter(TodoAdapter());
+  // await Hive.initFlutter();
+  // await Hive.openBox(boxName);
+  // WidgetsFlutterBinding.ensureInitialized();
+  // Hive.registerAdapter(TodoAdapter());
   runApp(const MyApp());
 }
 
@@ -56,7 +53,7 @@ class MyApp extends StatelessWidget {
         // home: const RandomUserScreen(),
         // home: const PostScreen(),
         // home: const FormScreen(),
-        // home: const PickerScreen(),
+        home: const PickerScreen(),
         // home: const Advancedwidgets(),
         // home: const ListviewScreen(),
         // home: const Rotatedbox(),
@@ -66,7 +63,7 @@ class MyApp extends StatelessWidget {
         // home: const MaterialScreen(),
         // home: const PaginationScreen(),
         // home: const PaginationScreen(),
-        home: const HiveTodoScreen(),
+        // home: const HiveTodoScreen(),
       ),
     );
   }

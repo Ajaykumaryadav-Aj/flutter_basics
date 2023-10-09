@@ -50,8 +50,7 @@ class _PickerScreenState extends State<PickerScreen> {
       appBar: AppBar(
         title: const Text('image picker screen'),
       ),
-      body: 
-      Column(
+      body: Column(
         children: [
           Wrap(
             children: List.generate(
@@ -82,13 +81,13 @@ class _PickerScreenState extends State<PickerScreen> {
             height: 40,
           ),
           GestureDetector(
-            onTap: () => pick(ImageSource.gallery),
+            onTap: () => pick(ImageSource.camera),
             child: Center(
               child: Container(
                 height: 100,
                 width: 100,
                 // color: const Color.fromARGB(255, 243, 222, 158),
-                child: image == null ? const Icon(Icons.photo) : null,
+
                 decoration: BoxDecoration(
                   color: const Color.fromARGB(255, 243, 222, 158),
                   image: image == null
@@ -96,6 +95,7 @@ class _PickerScreenState extends State<PickerScreen> {
                       : DecorationImage(
                           image: FileImage(image!), fit: BoxFit.cover),
                 ),
+                child: image == null ? const Icon(Icons.photo) : null,
               ),
             ),
           ),
