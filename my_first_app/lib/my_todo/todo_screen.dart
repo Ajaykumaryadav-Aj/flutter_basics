@@ -1,3 +1,6 @@
+import 'dart:developer';
+
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:my_first_app/my_todo/db_helper.dart';
 import 'package:my_first_app/my_todo/todo_model.dart';
@@ -29,9 +32,20 @@ class _TodoScreenState extends State<TodoScreen> {
 
   @override
   Widget build(BuildContext context) {
+    debugPrint(FirebaseAuth.instance.currentUser.toString());
+
     return Scaffold(
         appBar: AppBar(
           title: Text('${widget.model == null ? 'Create' : 'Edit'}TODO'),
+          actions: [
+            IconButton(
+                onPressed: () {
+                  FirebaseAuth.instance
+                      .signOut()
+                      .catchError((e) => debugPrint(e.toString()));
+                },
+                icon: const Icon(Icons.logout))
+          ],
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {

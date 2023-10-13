@@ -1,4 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:my_first_app/api_services/firbase_api.dart';
+import 'package:my_first_app/my_todo/todo_screen.dart';
 import 'package:my_first_app/providers/auth_provider.dart';
 import 'package:my_first_app/screens/signup_screen.dart';
 import 'package:provider/provider.dart';
@@ -36,7 +39,7 @@ class _LoginFirebaseScreenState extends State<LoginFirebaseScreen> {
             const SizedBox(
               height: 30,
             ),
-             TextFormField(
+            TextFormField(
               validator: (value) {
                 if (value!.isEmpty) {
                   return 'Email is required';
@@ -56,7 +59,7 @@ class _LoginFirebaseScreenState extends State<LoginFirebaseScreen> {
             const SizedBox(
               height: 20,
             ),
-             TextFormField(
+            TextFormField(
               validator: (value) {
                 if (value!.isEmpty) {
                   return 'Password is required';
@@ -73,8 +76,15 @@ class _LoginFirebaseScreenState extends State<LoginFirebaseScreen> {
               ),
             ),
             ElevatedButton(
+                onPressed: () {
+                  FirebaseApi.instance.signInWithGoogle();
+                },
+                child: const Text('Login with Google')),
+            const SizedBox(height: 20),
+            ElevatedButton(
               onPressed: () {
-                provider.login(emailcontroller.text, passcontroller.text);
+                FirebaseApi.instance
+                    .login(emailcontroller.text, passcontroller.text);
               },
               child: const Text('Login'),
             ),

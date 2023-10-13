@@ -4,6 +4,7 @@ import 'package:my_first_app/firebase_options.dart';
 import 'package:my_first_app/providers/auth_provider.dart';
 import 'package:my_first_app/providers/cart_provider.dart';
 import 'package:my_first_app/providers/page_provider.dart';
+import 'package:my_first_app/screens/initial_screen.dart';
 import 'package:my_first_app/screens/login_screen.dart';
 
 import 'package:provider/provider.dart';
@@ -36,43 +37,41 @@ class MyApp extends StatelessWidget {
         // ChangeNotifierProvider(create: (context) => CounterProvider())
       ],
       child: MaterialApp(
-        scaffoldMessengerKey: messangerkey,
-        debugShowCheckedModeBanner: false,
+          scaffoldMessengerKey: messangerkey,
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(
+            appBarTheme: const AppBarTheme(backgroundColor: Colors.blue),
+            useMaterial3: true,
+            //   colorScheme: ColorScheme.fromSeed(
+            //     seedColor: const Color.fromRGBO(36, 97, 220, 1),
+            //   ),
+          ),
 
-        theme: ThemeData(
-          appBarTheme: const AppBarTheme(backgroundColor: Colors.blue),
-          useMaterial3: true,
-          //   colorScheme: ColorScheme.fromSeed(
-          //     seedColor: const Color.fromRGBO(36, 97, 220, 1),
-          //   ),
-        ),
-
-        // home: const MyHomeScreen(),
-        // home: const MyWhatsapp(),
-        // home: const ProductScreen(),
-        // home: const SelectorScreen(),
-        // home: const MyUiDesign(),
-        // home: const SliverScreen(),
-        // home: const Googlekeeps(),
-        // home: const ApiUserScreen(),
-        // home: const CountScreens(),
-        // home: const ApiUserScreen(),
-        // home: const RandomUserScreen(),
-        // home: const PostScreen(),
-        // home: const FormScreen(),
-        // home: const PickerScreen(),
-        // home: const Advancedwidgets(),
-        // home: const ListviewScreen(),
-        // home: const Rotatedbox(),
-        // home: const PageviewScreen(),
-        // home: const PaintScreen(),
-        // home: const CliperScreeen(),
-        // home: const MaterialScreen(),
-        // home: const PaginationScreen(),
-        // home: const PaginationScreen(),
-        // home: const HiveTodoScreen(),
-        home: const LoginFirebaseScreen()
-      ),
+          // home: const MyHomeScreen(),
+          // home: const MyWhatsapp(),
+          // home: const ProductScreen(),
+          // home: const SelectorScreen(),
+          // home: const MyUiDesign(),
+          // home: const SliverScreen(),
+          // home: const Googlekeeps(),
+          // home: const ApiUserScreen(),
+          // home: const CountScreens(),
+          // home: const ApiUserScreen(),
+          // home: const RandomUserScreen(),
+          // home: const PostScreen(),
+          // home: const FormScreen(),
+          // home: const PickerScreen(),
+          // home: const Advancedwidgets(),
+          // home: const ListviewScreen(),
+          // home: const Rotatedbox(),
+          // home: const PageviewScreen(),
+          // home: const PaintScreen(),
+          // home: const CliperScreeen(),
+          // home: const MaterialScreen(),
+          // home: const PaginationScreen(),
+          // home: const PaginationScreen(),
+          // home: const HiveTodoScreen(),
+          home: const InitialScreen()),
     );
   }
 }
