@@ -1,13 +1,9 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:my_first_app/firebase_options.dart';
-import 'package:my_first_app/providers/auth_provider.dart';
-import 'package:my_first_app/providers/cart_provider.dart';
-import 'package:my_first_app/providers/page_provider.dart';
-import 'package:my_first_app/screens/initial_screen.dart';
-import 'package:my_first_app/screens/login_screen.dart';
+import 'package:my_first_app/riverpod/riverpod_screen.dart';
 
-import 'package:provider/provider.dart';
 
 final messangerkey = GlobalKey<ScaffoldMessengerState>();
 
@@ -21,7 +17,7 @@ void main() async {
   // await Hive.initFlutter();
   // await Hive.openBox(boxName);
   // Hive.registerAdapter(TodoAdapter());
-  runApp(const MyApp());
+  runApp(const ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -29,49 +25,53 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (context) => CartProvider()),
-        ChangeNotifierProvider(create: (context) => AuthProvider()),
-        ChangeNotifierProvider(create: (context) => PageProvider())
-        // ChangeNotifierProvider(create: (context) => CounterProvider())
-      ],
-      child: MaterialApp(
-          scaffoldMessengerKey: messangerkey,
-          debugShowCheckedModeBanner: false,
-          theme: ThemeData(
-            appBarTheme: const AppBarTheme(backgroundColor: Colors.blue),
-            useMaterial3: true,
-            //   colorScheme: ColorScheme.fromSeed(
-            //     seedColor: const Color.fromRGBO(36, 97, 220, 1),
-            //   ),
-          ),
+    return
+        //  MultiProvider(
+        // providers: [
+        //   ChangeNotifierProvider(create: (context) => CartProvider()),
+        //   ChangeNotifierProvider(create: (context) => AuthProvider()),
+        //   ChangeNotifierProvider(create: (context) => PageProvider())
+        //   // ChangeNotifierProvider(create: (context) => CounterProvider())
+        // ],
+        // child:
+        MaterialApp(
+      scaffoldMessengerKey: messangerkey,
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        appBarTheme: const AppBarTheme(backgroundColor: Colors.blue),
+        useMaterial3: true,
+        //   colorScheme: ColorScheme.fromSeed(
+        //     seedColor: const Color.fromRGBO(36, 97, 220, 1),
+        //   ),
+      ),
 
-          // home: const MyHomeScreen(),
-          // home: const MyWhatsapp(),
-          // home: const ProductScreen(),
-          // home: const SelectorScreen(),
-          // home: const MyUiDesign(),
-          // home: const SliverScreen(),
-          // home: const Googlekeeps(),
-          // home: const ApiUserScreen(),
-          // home: const CountScreens(),
-          // home: const ApiUserScreen(),
-          // home: const RandomUserScreen(),
-          // home: const PostScreen(),
-          // home: const FormScreen(),
-          // home: const PickerScreen(),
-          // home: const Advancedwidgets(),
-          // home: const ListviewScreen(),
-          // home: const Rotatedbox(),
-          // home: const PageviewScreen(),
-          // home: const PaintScreen(),
-          // home: const CliperScreeen(),
-          // home: const MaterialScreen(),
-          // home: const PaginationScreen(),
-          // home: const PaginationScreen(),
-          // home: const HiveTodoScreen(),
-          home: const InitialScreen()),
+      // home: const MyHomeScreen(),
+      // home: const MyWhatsapp(),
+      // home: const ProductScreen(),
+      // home: const SelectorScreen(),
+      // home: const MyUiDesign(),
+      // home: const SliverScreen(),
+      // home: const Googlekeeps(),
+      // home: const ApiUserScreen(),
+      // home: const CountScreens(),
+      // home: const ApiUserScreen(),
+      // home: const RandomUserScreen(),
+      // home: const PostScreen(),
+      // home: const FormScreen(),
+      // home: const PickerScreen(),
+      // home: const Advancedwidgets(),
+      // home: const ListviewScreen(),
+      // home: const Rotatedbox(),
+      // home: const PageviewScreen(),
+      // home: const PaintScreen(),
+      // home: const CliperScreeen(),
+      // home: const MaterialScreen(),
+      // home: const PaginationScreen(),
+      // home: const PaginationScreen(),
+      // home: const (),
+      // home: const HiveTodoScreen(),
+      // home: const InitialScreen(),
+      home: const RandomUserScreen(),
     );
   }
 }

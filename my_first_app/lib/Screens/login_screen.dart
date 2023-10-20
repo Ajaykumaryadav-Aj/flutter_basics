@@ -1,8 +1,7 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:my_first_app/api_services/firbase_api.dart';
-import 'package:my_first_app/my_todo/todo_screen.dart';
 import 'package:my_first_app/providers/auth_provider.dart';
+import 'package:my_first_app/screens/login_with_phone.dart';
 import 'package:my_first_app/screens/signup_screen.dart';
 import 'package:provider/provider.dart';
 
@@ -87,6 +86,17 @@ class _LoginFirebaseScreenState extends State<LoginFirebaseScreen> {
                     .login(emailcontroller.text, passcontroller.text);
               },
               child: const Text('Login'),
+            ),
+            const SizedBox(height: 15),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const LoginPhoneNumber(),
+                    ));
+              },
+              child: const Text('PhoneNumber'),
             ),
             const SizedBox(height: 20),
             GestureDetector(

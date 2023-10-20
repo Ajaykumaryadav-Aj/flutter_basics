@@ -14,7 +14,6 @@ class DbHelper {
     if (_database != null) return _database!;
     _database = await openDB();
     return _database!;
-    
   }
 
   static Database? _database;
@@ -25,7 +24,7 @@ class DbHelper {
       onCreate: (db, version) {
         return db.execute(
             'CREATE TABLE $_tableName( id INTEGER PRIMARY KEY,title TEXT, body TEXT )');
-      }, 
+      },
       version: _version,
     );
     // _database = database;
@@ -57,6 +56,6 @@ class DbHelper {
   Future<void> delete(TodoModel todo) async {
     final db = await database;
 
-    await db.delete(_tableName,where: 'id = ?', whereArgs: [todo.id]);
+    await db.delete(_tableName, where: 'id = ?', whereArgs: [todo.id]);
   }
 }

@@ -1,4 +1,3 @@
-import 'dart:developer';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +12,7 @@ class InitialScreen extends StatelessWidget {
     return StreamBuilder(
       stream: FirebaseAuth.instance.authStateChanges(),
       builder: (BuildContext context, AsyncSnapshot<User?> snapshot) {
-        debugPrint(snapshot.data.toString()+'snapshot data');
+        debugPrint(snapshot.data.toString());
         return snapshot.data == null
             ? const LoginFirebaseScreen()
             : const TodoScreen();
