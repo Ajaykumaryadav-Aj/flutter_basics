@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:my_first_app/animation/hero.dart';
 import 'package:my_first_app/firebase_options.dart';
 import 'package:my_first_app/riverpod/riverpod_screen.dart';
 
@@ -71,7 +72,8 @@ class MyApp extends StatelessWidget {
       // home: const (),
       // home: const HiveTodoScreen(),
       // home: const InitialScreen(),
-      home: const RandomUserScreen(),
+      // home: const RandomUserScreen(),
+      home: const Heropage(),
     );
   }
 }
