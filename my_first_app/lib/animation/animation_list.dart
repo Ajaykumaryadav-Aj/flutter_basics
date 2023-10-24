@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class AnimatedListt extends StatefulWidget {
@@ -14,7 +13,7 @@ class _AnimatedListtState extends State<AnimatedListt> {
 
   void _addItems() {
     _items.insert(0, 'Item${_items.length + 1}');
-    _key.currentState!.insertItem(0, duration: const Duration(seconds: 1));
+    _key.currentState!.insertItem(0, duration: const Duration(milliseconds:300 ));
   }
 
   // final mytile = ListTile();

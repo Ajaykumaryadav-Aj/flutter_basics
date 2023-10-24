@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:my_first_app/animation/animated_builder.dart';
 import 'package:my_first_app/animation/animation_list.dart';
 import 'package:my_first_app/animation/curve_navigatiobar_screen.dart';
 import 'package:my_first_app/firebase_options.dart';
@@ -72,7 +73,8 @@ class MyApp extends StatelessWidget {
             // home: const HiveTodoScreen(),
             // home: const InitialScreen(),
             // home: const RandomUserScreen(),
-            home:const AnimatedListt()
+            // home:const AnimatedListt()
+            home: const BuilderAnimated(),
             );
   }
 }
